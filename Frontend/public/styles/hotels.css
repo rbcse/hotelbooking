@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hotel-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    gap:1.4rem;
+    padding:0.7rem;
+}
+
+.top-section{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:1.4rem; 
+    width:100%;
+    padding:0.4rem;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+}
+
+.input-fields{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:1.5rem;
+}
+
+input{
+    padding:0.5rem;
+    border:2px solid rgb(160, 160, 160);
+    outline: none;
+    border-radius:5px;
+}
+
+.top-section a{
+    text-decoration: none;
+    color:black;
+    font-size:1.5rem;   
+}
+
+.top-section a h1{
+    font-size:2rem;
+    font-weight:900;
+}
+
+.hotels-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1.4rem;
+    width:100%;
+    flex-wrap:wrap;
+    margin-top:5rem;
+}
+
+.card img{
+    height:30vh;
+}
+
+.box{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#change-btn{
+    display:none;
+}
+
+.box p{
+    font-weight:500;
+}
+
+@media (max-width:450px) {
+    #change-btn{
+        display:block;
+    }
+    .input-fields , #update-btn{
+        display:none;
+    }
+    input{
+        width:100%;
+    }
+}

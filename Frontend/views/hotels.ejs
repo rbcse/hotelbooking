@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels - BookMyHotel</title>
+    <link rel="stylesheet" href="/styles/hotels.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+`   qqqQQ
+    
+    <div class="hotel-container">
+
+        <form action="/browseallhotels">
+            <div class="top-section">
+                <a href="/"><h1>BookMyHotel</h1></a>
+                <div class="input-fields">
+                    <input type="text" name="userLocation" placeholder="Location">
+                    <input type="date" name="checkin" value="<%= checkin %>">
+                    <input type="date" name="checkout" value="<%= checkout %>">
+                    <input type="text" name="" placeholder="1Room 2Adults">
+                </div>
+                <button type="submit" class="btn btn-primary" id="update-btn">Update</button>
+                <button type="button" class="btn btn-primary" id="change-btn">Change</button>
+            </div>
+        </form>
+
+        <div class="hotels-section">
+            <% for(let i=0;i<hotelArr.length;i++){ %>
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= hotelArr[i].image %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= hotelArr[i].name %></h5>
+                        <p class="card-text"><%= hotelArr[i].location %></p>
+                        <div class="box">
+                            <p class="card-text"><span style='font-size:16px;'>&#8377;</span><%= hotelArr[i].price %></p>
+                            <p class="card-text"><%= hotelArr[i].rating %><span style="font-size:100%;color:blue;">&bigstar;</span></p>
+                        </div>
+                        <a href="/viewdetails?id=<%= hotelArr[i].id %>&image=<%= hotelArr[i].image %>&name=<%= hotelArr[i].name %>&location=<%= hotelArr[i].location %>&price=<%= hotelArr[i].price %>&rating=<%= hotelArr[i].rating %>&checkin=<%= checkin %>&checkout=<%= checkout %>" class="btn btn-primary">View details</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+    </div>
+
+    <script>
+        let changeBtn = document.querySelector("#change-btn");
+        let updateBtn = document.querySelector("#update-btn");
+        let inputFields = document.querySelector(".input-fields");
+        let topSection = document.querySelector(".top-section");
+        let flag = false;
+
+        changeBtn.addEventListener("click",()=>{
+            if(flag == false){
+                changeBtn.innerHTML = "Close";
+                topSection.style.display = "flex";
+                topSection.style.justifyContent = "center";
+                topSection.style.alignItems = "center";
+                topSection.style.flexDirection = "column";
+                topSection.style.zIndex = "1000";
+                topSection.style.backgroundColor = "white";
+                inputFields.style.display = "flex";
+                inputFields.style.justifyContent = "center";
+                inputFields.style.alignItems = "center";
+                inputFields.style.flexDirection = "column";
+                updateBtn.style.display = "block";
+                updateBtn.style.width = "60%";
+                changeBtn.style.width = "60%";
+                flag = true;
+            }
+            else{
+                changeBtn.innerHTML = "Change";
+                inputFields.style.display = "none";
+                topSection.style.flexDirection = "row";
+                updateBtn.style.display = "none";
+                flag = false;
+            }
+        })
+    </script>
+
+</body>
+</html>

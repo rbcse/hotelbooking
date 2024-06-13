@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signup-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    width:100%;
+    background-color: rgb(246, 243, 243);
+}
+
+.inner-container{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1.5rem;
+    padding:1.2rem;
+    border-radius:30px;
+    width:30%;
+    background-color: white;
+    z-index:100;
+}
+
+h1{
+    font-size:3rem;
+    font-weight:800;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    font-weight:500;
+}
+
+form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:40%;
+    gap:2rem;
+}
+
+.email-section , .password-section , .name-section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:40%;
+}
+
+.email-section{
+    width:50%;
+}
+
+.name-section img , .email-section img , .password-section img{
+    width:25%;
+}
+.name-section input , .email-section input , .password-section input{
+    padding:1rem;
+    border:none;
+    border-bottom:2px solid grey;
+    outline:none;
+    font-size:1.2rem;
+}
+
+.btn{
+    width:100%;
+    padding:0.9rem 0;
+    font-size:1rem;
+    font-weight:500;
+}
+
+@media (max-width:450px){
+    .inner-container{
+        width:90%;
+    }
+    .name-section img , .email-section img , .password-section img{
+        width:35%;
+    }
+}
+
+p a{
+    color:blue;
+}

@@ -1,0 +1,414 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    font-family: __Inter_ecbec9, Inter, sans-serif;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+
+.navbar{
+    /* border:2px solid red; */
+    width:100vw;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding:0.7rem;
+    position: fixed;
+    top:0;
+    left:0; 
+    background-color: white;
+}
+
+
+.navbar a{
+    text-decoration: none;
+}
+
+.navbar h1{
+    color:black;
+    font-size:2rem;
+    font-weight:900;
+}
+
+.navbar nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:2.5rem;
+}
+
+.navbar nav a{
+    color:black;
+    font-size:1.1rem;
+}
+
+.navbar nav a:hover{
+    color:blue;
+}
+
+.searchBar{
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+    gap:0.5rem;  
+}
+
+.searchBar input{
+    padding:0.28rem 0.1rem;
+    border-radius: 4px;
+    border:1px solid black;
+    outline:none;
+}
+
+.navbar img{
+    display:none;
+}
+
+.dummyCont {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    height:100vh;
+    margin-top:10rem;
+}
+
+.dummyCont.show {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    z-index:100;
+    transition: 0.5s;
+}
+
+.dummyCont a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.dummyCont input{
+    padding:0.28rem 0.1rem;
+    border-radius: 4px;
+    border:1px solid black;
+    outline:none;
+}
+
+
+@media (max-width:450px){
+    nav a, .searchBar{
+        display:none;
+    }
+
+    .navbar #menu{
+        display:block;
+        width:10%;
+    }
+}
+
+.heroSection{
+    height:90vh;
+    width:100vw;
+    background-image: url('../images/Best-Hotels-India.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:4rem;
+}
+
+.heroSection form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1.5rem;
+    background-color: white;
+    width:50%;
+    height:40vh;
+    border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.heroSection form img{
+    width:7%;
+}
+
+.location , .datesandPerson , .person{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+}
+
+.heroSection form input{
+    padding:0.5rem;
+    border-radius:6px;
+    outline:none;
+    border:1.2px solid grey;
+}
+
+.location input{
+    width:100%;
+}
+
+.datesandPerson{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1.1rem;
+}
+
+input[type="date"]{
+    padding:0 1rem;
+    width:50%;
+}
+
+.heroSection button{
+    width:80%;
+    padding:0.5rem 0;
+}
+
+.person img{
+    height:2rem;
+    width:100%;
+}
+
+@media (max-width:450px){
+    .heroSection form{
+        width:70%;
+        height:auto;
+        padding:1.2rem 0;
+    }
+    .datesandPerson{
+        flex-direction: column;
+    }
+
+    .heroSection form input{
+        width:100%;
+    }
+
+    .person{
+        width:100%;
+    }
+
+    .heroSection form img{
+        width:10%;
+    }
+}
+
+.popularSection{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap:1.4rem;
+    width:100%;
+    margin-top:2rem;
+}
+
+.dest{
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    gap:2rem;
+}
+
+.dest h1{
+    font-weight:600;
+}   
+
+.dcard{
+    height:35vh;
+    width:14%;
+    border-radius:5px;
+    color:white;
+    display: flex;
+    flex-direction: column-reverse;
+    padding:0 0.5rem;
+    cursor:pointer;
+}
+
+.dcard h2{
+    font-family: __Inter_ecbec9, Inter, sans-serif;
+    font-size:1.5rem;
+    font-weight:bolder;
+    text-align: left;
+}
+
+.dcard p{
+    text-align: left;
+}
+
+@media (max-width:450px){
+    .dest{
+        flex-direction: column;
+    }
+    .dcard{
+        width:100%;
+        height:45vh;
+    }
+}
+
+.customer-reviews{
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap:2rem;
+    margin-top:3rem;
+    width:100%;
+}
+
+.cont , .cust-review{
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    gap:1.4rem;
+}
+
+.cust-review{
+    flex-direction: column;
+    width:30%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding:1rem;
+}
+
+.cust-review img{
+    width:30%;
+}
+
+.cust-review h2{
+    font-weight:450;
+    font-size:2rem;
+}
+
+.faq-section{
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap:2rem;
+    margin-top:3rem;
+    width:100%;
+}
+
+.faq-card{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap:2rem;
+    width:100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 1.95px 0;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: row;
+    width:100%;
+}
+
+.question img{
+    width:3%;
+    cursor:pointer;
+}
+
+@media (max-width:450px){
+    .cont{
+        flex-direction: column;
+    }
+
+    .cust-review{
+        width:95%;
+    }
+
+    .question h3{
+        font-size:1.4rem;
+    }
+
+    .question img{
+        width:10%;
+        height:1.5rem;
+    }
+}
+
+footer{
+    background-color: rgb(239, 226, 211);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* gap:1.4rem; */
+    width:100vw;
+    padding:2.5rem;
+}
+
+.left-section , .mid-section , .right-section{
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap:1.4rem;
+    width:30%;
+}
+
+.left-section{
+    width:25%;  
+}
+
+.social-media{
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    width:100%;
+    gap:2rem;
+}
+
+.social-media a{
+    width:10%;
+}
+.social-media a img{
+    width:100%;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    text-align: center;
+}
+
+@media (max-width:450px){
+    footer , .left-section , .mid-section , .right-section{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width:100%;
+    }
+
+    footer{
+        gap:3rem;
+    }
+    .social-media a{
+        width:100%;
+    }
+    .dummyCont.show{
+        justify-content: left;
+        align-items: left;
+    }
+}
